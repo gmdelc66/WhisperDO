@@ -17,18 +17,23 @@
 #       Directorio donde se guardarán los archivos
 #       directorio = "acento_local" si no existe se creara
 #   Texto que se convertirá en voz
-#     Se puede solo generar un archivo con un idioma y acento o con cada unos de los miembros de la lista, para ver cual nos funciona mejor
+#     Se puede solo generar un archivo con un idioma y acento o con cada unos de los miembros de la lista,
+#     para ver cual nos funciona mejor
 #     Generación de Archivos: Para cada combinación de idioma y TLD en la lista, el script genera un archivo
 #     de audio.
-#       Obtención de la Fecha y Hora: Usamos datetime.now().strftime("%Y%m%d%H%M%S") para obtener la fecha y hora actual en el formato YYYYMMDDHHMMSS.
+#       Obtención de la Fecha y Hora: Usamos datetime.now().strftime("%Y%m%d%H%M%S") para obtener la fecha
+#       y hora actual en el formato YYYYMMDDHHMMSS.
 
 #     Nombre del Archivo: El nombre del archivo se genera con la marca de tiempo incluida al principio del
 #     nombre, ({fecha_hora}_audio_{lang}_{tld}.mp3).
-#     Reproducción de Archivos: se usa idioma es, local com.mx o es ca velocidad 1.58, y tono .54, son los mas parecidos a nuestros español)
+#     Reproducción de Archivos: se usa idioma es, local com.mx o es ca velocidad 1.58, y tono .54, son los
+#     mas parecidos a nuestros español)
 #     Después de guardar cada archivo, el script lo reproduce y muestra en pantalla el nombre del archivo
 #     y su descripción.
 #
-#     Manejo de Errores: El script captura y muestra errores si ocurre algún problema al guardar o reproducir los archivos.#
+#     Manejo de Errores: El script captura y muestra errores si ocurre algún problema al guardar o
+#     reproducir los archivos.#
+##############################################################################################################
 from gtts import gTTS
 import os
 import subprocess
@@ -146,13 +151,13 @@ def prueba_filtro(archivo_audio, text):
         print(f"Aplicando filtro: {nombre_filtro}")
         # reproducir_audio(archivo_audio, velocidad=velocidad, tono=tono, efecto=efecto)
         reproducir_audio(archivo_audio, velocidad=velocidad, tono=tono, efecto=efecto)
+
 def crea_reproduce(texto):
     #archivo_audio = genera_muestra_acentos(texto) # Crear archivo con todos los acentos que tiene Gtts usando el español
     archivo_audio = genera_muestra_acentos(texto,tld="com.mx")  # Crear archivo con todos los acentos que tiene Gtts usando el español
     # archivo_audio = os.path.join(directorio, f"audio_fr_ca.mp3")
     # prueba_filtro(archivo_audio, text)
     reproducir_audio(archivo_audio, 1.58,.54)
-
 
 def main():
     # Configuración del parser de argumentos

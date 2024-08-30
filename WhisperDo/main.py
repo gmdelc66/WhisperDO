@@ -32,7 +32,7 @@ def listen_and_convert():
     global detected_text
     while True:
         # Simular la escucha continua (en un entorno real, captura el audio)
-        audio_file = "mic_audio.wav"
+        audio_file = ("mic_audio.mp3")
         if os.path.exists(audio_file):
             # Convertir audio a texto usando Whisper
             result = model.transcribe(audio_file)
