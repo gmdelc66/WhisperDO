@@ -10,6 +10,9 @@
 #     Este pipeline tomará un archivo de audio, aplicará las técnicas de
 #     preprocesamiento, y devolverá el archivo procesado listo para ser
 #     transcrito con Whisper.
+#################################################################################3
+# **************** NO AYUDAN EN NADA ARCHIVOS PARA WHISPER MODEL SMALL ***********
+##################################################################################
 from scipy.io import wavfile
 import numpy as np
 from pydub import AudioSegment
